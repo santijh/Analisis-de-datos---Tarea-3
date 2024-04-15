@@ -21,3 +21,5 @@ predictors
 target
 corr = predictors.corr()
 corr
+sns.heatmap(corr)
+plt.show()
