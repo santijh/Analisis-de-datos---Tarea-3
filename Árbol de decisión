@@ -26,3 +26,11 @@ plt.show()
 X_train, X_test, y_train, y_test = train_test_split(predictors, target, test_size=0.3, random_state=13)
 tree = DecisionTreeClassifier()
 arbol = tree.fit(X_train, y_train)
+plot_tree(arbol)
+predicciones = arbol.predict(X_test)
+predicciones
+#check confusion matriz
+pd.crosstab(np.array([y[0] for y in y_test.values.tolist()]), predicciones, rownames=['Actual'], colnames=['Predicciones'])
+accuracy = accuracy_score(y_test,predicciones)
+accuracy
+0.621875
