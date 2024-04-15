@@ -11,3 +11,13 @@ data = pd.read_csv("winequality-red.csv")
 data.head()
 data.describe()
 data.isna().sum()
+plt.hist(data.quality)
+sns.scatterplot(x = "alcohol", y = "pH", hue = "quality", data = data)
+predictors_col = ["density", "pH", "alcohol", "residual sugar"]
+target_col = ["quality"]
+predictors = data[predictors_col]
+target = data[target_col]
+predictors
+target
+corr = predictors.corr()
+corr
