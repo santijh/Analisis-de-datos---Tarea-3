@@ -23,3 +23,6 @@ corr = predictors.corr()
 corr
 sns.heatmap(corr)
 plt.show()
+X_train, X_test, y_train, y_test = train_test_split(predictors, target, test_size=0.3, random_state=13)
+tree = DecisionTreeClassifier()
+arbol = tree.fit(X_train, y_train)
